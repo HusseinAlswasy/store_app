@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class ProductModel {
   final int id;
   final String title;
-  final double price;
+  final dynamic price;
   final String description;
   final String image;
   final RatingModel rating;
@@ -30,7 +30,7 @@ class ProductModel {
 }
 
 class RatingModel {
-  final double rate;
+  final dynamic rate;
   final int count;
 
   RatingModel({
@@ -39,7 +39,7 @@ class RatingModel {
   });
 
   factory RatingModel.fromJson(jsonData) {
-    return jsonData(
+    return RatingModel(
       rate: jsonData['rate'],
       count: jsonData['count'],
     );
