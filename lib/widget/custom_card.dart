@@ -29,7 +29,7 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Shose Red',
+                    'Iphon 13',
                     style: TextStyle(color: Colors.deepPurple),
                   ),
                   SizedBox(
@@ -39,7 +39,7 @@ class CustomCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        r'$120',
+                        r'$575',
                         style: TextStyle(color: Colors.black),
                       ),
                       Icon(

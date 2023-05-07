@@ -11,6 +11,7 @@ class StoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'MochiyPopOne'),
       debugShowCheckedModeBanner: false,
       initialRoute: HomePage.id,
       routes: {
