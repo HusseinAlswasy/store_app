@@ -4,10 +4,12 @@ import 'package:store_app/widget/custom_text_field.dart';
 import 'package:lottie/lottie.dart';
 
 class UpdatePage extends StatelessWidget {
-  const UpdatePage({super.key});
+  UpdatePage({super.key, this.title, this.desc, this.image, this.price});
 
   @override
   static String id = 'UpdatePage';
+  String? title, desc, image;
+  int? price;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +28,6 @@ class UpdatePage extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.network(
                   'https://assets6.lottiefiles.com/packages/lf20_yefkwifo.json',
@@ -37,6 +38,9 @@ class UpdatePage extends StatelessWidget {
               CustomTextField(
                 hintText: 'Product Name',
                 labelText: 'Product Name',
+                onChanged: (data) {
+                  title: data;
+                },
               ),
               SizedBox(
                 height: 10,
@@ -44,6 +48,9 @@ class UpdatePage extends StatelessWidget {
               CustomTextField(
                 hintText: 'Describtion',
                 labelText: 'Describtion',
+                onChanged: (data) {
+                  desc: data;
+                },
               ),
               SizedBox(
                 height: 10,
@@ -51,6 +58,10 @@ class UpdatePage extends StatelessWidget {
               CustomTextField(
                 hintText: 'Price',
                 labelText: 'Price',
+                onChanged: (data) {
+                  price:int.parse(data);
+                },
+                type: TextInputType.number,
               ),
               SizedBox(
                 height: 10,
@@ -58,6 +69,9 @@ class UpdatePage extends StatelessWidget {
               CustomTextField(
                 hintText: 'Image',
                 labelText: 'Image',
+                onChanged: (data) {
+                  image: data;
+                },
               ),
               SizedBox(
                 height: 50,
