@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key});
+  CustomTextField({super.key, required this.hintText, required this.labelText});
 
   @override
   Function(String)? onChanged;
@@ -33,12 +33,12 @@ class CustomTextField extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        // border: OutlineInputBorder(
-        //   borderSide: BorderSide(
-        //     color: Colors.black,
-        //   ),
-        //   borderRadius: BorderRadius.circular(16),
-        // ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
+          ),
+          borderRadius: BorderRadius.circular(16),
+        ),
       ),
     );
   }
