@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
+import 'package:store_app/services/update_product.dart';
 import 'package:store_app/widget/custom_button.dart';
 import 'package:store_app/widget/custom_text_field.dart';
 import 'package:lottie/lottie.dart';
@@ -9,8 +11,9 @@ class UpdatePage extends StatelessWidget {
   @override
   static String id = 'UpdatePage';
   String? title, desc, image;
-  int? price;
+  String? price;
   Widget build(BuildContext context) {
+    ProductModel product = ModalRoute.of(context)!.settings.arguments as ProductModel;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -39,7 +42,7 @@ class UpdatePage extends StatelessWidget {
                 hintText: 'Product Name',
                 labelText: 'Product Name',
                 onChanged: (data) {
-                  title: data;
+                  title = data;
                 },
               ),
               SizedBox(
@@ -49,7 +52,7 @@ class UpdatePage extends StatelessWidget {
                 hintText: 'Describtion',
                 labelText: 'Describtion',
                 onChanged: (data) {
-                  desc: data;
+                  desc = data;
                 },
               ),
               SizedBox(
@@ -59,7 +62,7 @@ class UpdatePage extends StatelessWidget {
                 hintText: 'Price',
                 labelText: 'Price',
                 onChanged: (data) {
-                  price:int.parse(data);
+                  price = data;
                 },
                 type: TextInputType.number,
               ),
@@ -70,13 +73,24 @@ class UpdatePage extends StatelessWidget {
                 hintText: 'Image',
                 labelText: 'Image',
                 onChanged: (data) {
-                  image: data;
+                  image = data;
                 },
               ),
               SizedBox(
                 height: 50,
               ),
-              CustomButton(text: 'Update'),
+              CustomButton(
+                text: 'Update',
+                onTap: () {
+                  UpdateProductServices().updateData(
+                    title: title!,
+                    price: price!,
+                    desc: desc!,
+                    image: image!,
+                    category: product.category,
+                  );
+                },
+              ),
             ],
           ),
         ),

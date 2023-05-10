@@ -6,6 +6,7 @@ class ProductModel {
   final dynamic price;
   final String description;
   final String image;
+  final String category;
   final RatingModel rating;
 
   ProductModel({
@@ -14,6 +15,7 @@ class ProductModel {
     required this.price,
     required this.description,
     required this.image,
+    required this.category,
     required this.rating,
   });
 
@@ -24,6 +26,7 @@ class ProductModel {
       price: jsonData['price'],
       description: jsonData['description'],
       image: jsonData['image'],
+      category: jsonData['category'],
       rating: RatingModel.fromJson(jsonData['rating']),
     );
   }
