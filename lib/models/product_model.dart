@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 class ProductModel {
-  final int id;
+  final dynamic id;
   final String title;
   final dynamic price;
   final String description;
@@ -21,7 +21,7 @@ class ProductModel {
 
   factory ProductModel.fromJson(jsonData) {
     return ProductModel(
-      id: jsonData['id'],
+      id:jsonData['id'],
       title: jsonData['title'],
       price: jsonData['price'],
       description: jsonData['description'],
